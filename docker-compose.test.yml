@@ -1,9 +1,10 @@
 version: '3'
 
+# creating the private network that can be used within the container. We will use this when calling curl. Will use serve instead of localhost.
 services:
-  serve:
-    build: .
-  sut:
-    build: ./tests
-    depends_on:
-      - serve
+    serve:
+        build: .
+    sut:
+        build: ./tests
+        depends_on:
+            - serve
